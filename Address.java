@@ -2,6 +2,7 @@
  * This class represents an address
  * It contains the street number, street name, city, province and postal code
  * It also contains a constructor and a toString method
+ * @author Nicholas Almeida
  */
 public class Address {
     // declare the variables

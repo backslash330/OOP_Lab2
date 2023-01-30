@@ -1,9 +1,17 @@
 // import the JOptionPane class
 import javax.swing.JOptionPane;
 
-// This is the lab2 class
+/** This is the lab 2 class
+ * @author Nicholas Almeida
+ * @param args the command line arguments
+ * @return None
+*/
 public class Lab2 {
-    // This is the main method
+    /** This is the main method of the lab 2 class
+     * @param args the command line arguments
+     * @return None
+    */
+
     public static void main(String[] args) {
         // create an address object
         Address address = new Address();
@@ -24,6 +32,7 @@ public class Lab2 {
 
         while (address.setStreetNumber(streetNumberInt) == false) {
             streetNumber = JOptionPane.showInputDialog("Last street number entered was invalid. Enter the street number");
+            streetNumberInt = Integer.parseInt(streetNumber);
         }
         while (address.setStreet(street) == false) {
             street = JOptionPane.showInputDialog("Last street name entered was invalid. Enter the street name");
