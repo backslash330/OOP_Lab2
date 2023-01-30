@@ -17,10 +17,16 @@ public class Lab2 {
         Address address = new Address();
         // get the values from the address object 
         // use a joption input dialog to get the values
-
+        int streetNumberInt = 0;
         String streetNumber = JOptionPane.showInputDialog("Enter the street number");
         // convert the string to an int
-        int streetNumberInt = Integer.parseInt(streetNumber);
+        // if the string is a number, then set the value in the address object
+        // otherwise, set the value to -1
+        if (streetNumber.matches("[0-9]+")) {
+            streetNumberInt = Integer.parseInt(streetNumber);
+        } else {
+            streetNumberInt = -1;
+        }
         String street = JOptionPane.showInputDialog("Enter the street name");
         String city = JOptionPane.showInputDialog("Enter the city");
         String province = JOptionPane.showInputDialog("Enter the province");
@@ -32,7 +38,11 @@ public class Lab2 {
 
         while (address.setStreetNumber(streetNumberInt) == false) {
             streetNumber = JOptionPane.showInputDialog("Last street number entered was invalid. Enter the street number");
-            streetNumberInt = Integer.parseInt(streetNumber);
+            if (streetNumber.matches("[0-9]+")) {
+                streetNumberInt = Integer.parseInt(streetNumber);
+            } else {
+                streetNumberInt = -1;
+            }
         }
         while (address.setStreet(street) == false) {
             street = JOptionPane.showInputDialog("Last street name entered was invalid. Enter the street name");

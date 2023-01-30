@@ -160,7 +160,7 @@ public class Address {
      */
     public String toString() {
         // return the address as a string
-        return this.streetNumber + " " + this.street + ", " + this.city + ", " + this.province + ", " + this.postalCode;
+        return this.streetNumber + " " + this.street + ",\n " + this.city + ", " + this.province + ",\n " + this.postalCode;
     }
     
 }
